@@ -1,0 +1,4 @@
+ALTER TABLE verification
+ADD COLUMN risk_score FLOAT DEFAULT 0;
+ALTER TABLE complaints
+ADD COLUMN risk_score FLOAT DEFAULT 0;
