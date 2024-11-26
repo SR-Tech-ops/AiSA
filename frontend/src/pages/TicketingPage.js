@@ -10,7 +10,7 @@ const TicketingPage = () => {
 
   useEffect(() => {
     // Fetch all tickets
-    axios.get("http://localhost:5000/api/tickets").then((res) => {
+    axios.get("https://aisa-qfsr.onrender.com/api/tickets").then((res) => {
       if (res.data.success) {
         setTickets(res.data.data);
       }

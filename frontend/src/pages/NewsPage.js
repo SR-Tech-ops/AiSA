@@ -9,12 +9,12 @@ const NewsPage = () => {
 
     useEffect(() => {
         // Fetch risky entities
-        axios.get('http://localhost:5000/api/risky-entities').then((res) => {
+        axios.get('https://aisa-qfsr.onrender.com/api/risky-entities').then((res) => {
             if (res.data.success) setRiskyEntities(res.data.data);
         });
 
         // Fetch forum posts
-        axios.get('http://localhost:5000/api/forum/posts').then((res) => {
+        axios.get('https://aisa-qfsr.onrender.com/api/forum/posts').then((res) => {
             if (res.data.success) setNewsPosts(res.data.data);
         });
     }, []);

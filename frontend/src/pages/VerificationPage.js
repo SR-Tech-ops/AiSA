@@ -31,7 +31,7 @@ const VerificationPage = () => {
         setResult(null); // Reset result on new request
 
         try {
-            const response = await axios.post('http://localhost:5000/api/verify', {
+            const response = await axios.post('https://aisa-qfsr.onrender.com/api/verify', {
                 type: verificationType,
                 value: inputValue,
             });

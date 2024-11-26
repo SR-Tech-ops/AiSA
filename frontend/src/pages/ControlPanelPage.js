@@ -26,7 +26,7 @@ const ControlPanelPage = () => {
 
   useEffect(() => {
     // Fetch posts
-    axios.get("http://localhost:5000/api/forum/posts").then((res) => {
+    axios.get("https://aisa-qfsr.onrender.com/api/forum/posts").then((res) => {
       if (res.data.success) setPosts(res.data.data);
     });
 

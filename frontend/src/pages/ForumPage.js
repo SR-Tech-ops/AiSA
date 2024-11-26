@@ -9,12 +9,12 @@ const ForumPage = () => {
 
     useEffect(() => {
         // Fetch risky entities
-        axios.get('http://localhost:5000/api/risky-entities').then((res) => {
+        axios.get('https://aisa-qfsr.onrender.com/api/risky-entities').then((res) => {
             if (res.data.success) setRiskyEntities(res.data.data);
         });
 
         // Fetch forum posts
-        axios.get('http://localhost:5000/api/forum/posts').then((res) => {
+        axios.get('https://aisa-qfsr.onrender.com/api/forum/posts').then((res) => {
             if (res.data.success) setForumPosts(res.data.data);
         });
     }, []);
@@ -23,7 +23,7 @@ const ForumPage = () => {
     const handleNewPostSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post('http://localhost:5000/api/forum/post', newPost);
+            const res = await axios.post('https://aisa-qfsr.onrender.com/api/forum/post', newPost);
             if (res.data.success) setForumPosts([...forumPosts, res.data.data]);
             setNewPost({ user: "", title: "", content: "" });
         } catch (error) {
@@ -34,7 +34,7 @@ const ForumPage = () => {
     // Handle likes
     const handleLike = async (postId) => {
         try {
-            const res = await axios.post(`http://localhost:5000/api/forum/post/${postId}/like`);
+            const res = await axios.post(`https://aisa-qfsr.onrender.com/api/forum/post/${postId}/like`);
             if (res.data.success) {
                 setForumPosts((prevPosts) =>
                     prevPosts.map((post) =>
@@ -50,7 +50,7 @@ const ForumPage = () => {
     // Handle dislikes
     const handleDislike = async (postId) => {
         try {
-            const res = await axios.post(`http://localhost:5000/api/forum/post/${postId}/dislike`);
+            const res = await axios.post(`https://aisa-qfsr.onrender.com/api/forum/post/${postId}/dislike`);
             if (res.data.success) {
                 setForumPosts((prevPosts) =>
                     prevPosts.map((post) =>
@@ -69,7 +69,7 @@ const ForumPage = () => {
         if (!commentContent) return alert("Comment cannot be empty.");
 
         try {
-            const res = await axios.post(`http://localhost:5000/api/forum/post/${postId}/comment`, {
+            const res = await axios.post(`https://aisa-qfsr.onrender.com/api/forum/post/${postId}/comment`, {
                 user: "Anonymous", // Replace with logged-in user's name if available
                 content: commentContent,
             });

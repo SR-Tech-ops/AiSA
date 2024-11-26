@@ -8,7 +8,7 @@ function Signup() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await axios.post('http://localhost:5000/api/signup', { name, password });
+        const response = await axios.post('https://aisa-qfsr.onrender.com/api/signup', { name, password });
         console.log(response.data);
     };
 

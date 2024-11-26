@@ -9,13 +9,13 @@ const NFCCDashboard = () => {
   useEffect(() => {
     // Fetch Activities
     axios
-      .get('http://localhost:5000/dashboard/activities')
+      .get('https://aisa-qfsr.onrender.com/dashboard/activities')
       .then((response) => setActivities(response.data))
       .catch((error) => console.error('Error fetching activities:', error));
 
     // Fetch Risk Scores
     axios
-      .get('http://localhost:5000/dashboard/risk-scores')
+      .get('https://aisa-qfsr.onrender.com/dashboard/risk-scores')
       .then((response) => setRiskScores(response.data))
       .catch((error) => console.error('Error fetching risk scores:', error));
   }, []);
